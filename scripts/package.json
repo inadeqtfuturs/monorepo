@@ -1,0 +1,12 @@
+{
+  "name": "@if/scripts",
+  "type": "module",
+  "scripts": {
+    "gen:changelog": "tsx src/generateChangelog.ts"
+  },
+  "devDependencies": {
+    "@if/tooling": "*",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.3"
+  }
+}
