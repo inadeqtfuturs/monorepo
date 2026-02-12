@@ -14,7 +14,7 @@
     "@if/tooling": "*",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
-    "@storybook/addon-links": "^8.6.12",
+    "@storybook/addon-links": "^9.1.15",
     "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/blocks": "^8.6.12",
     "@storybook/cli": "^8.6.12",
