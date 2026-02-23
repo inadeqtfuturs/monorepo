@@ -18,4 +18,4 @@ use whenever your boomer boss shows you that article about how engineers at spot
 - [A Huge Survey of CEOs and Other Execs Just Found Something Damning About AI’s Effects on Productivity](https://futurism.com/artificial-intelligence/survey-ceos-ai-workplace)
 - [The AI productivity trap: Why your best engineers are getting slower](https://www.cio.com/article/4124515/the-ai-productivity-trap-why-your-best-engineers-are-getting-slower.html)
     - '...the single greatest frustration for developers is dealing with AI solutions that look correct but are slightly wrong.'
-
+- [Anthropic Study: AI Coding Assistance Reduces Developer Skill Mastery by 17%](https://www.infoq.com/news/2026/02/ai-coding-skill-formation/)
