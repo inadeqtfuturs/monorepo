@@ -4,7 +4,7 @@
   "private": true,
   "sideEffects": ["*.css"],
   "scripts": {
-    "dev": "export $(grep -e '^STORYBOOK_PORT' -- ../../.env) && sb dev -p ${STORYBOOK_PORT} --no-open",
+    "#dev": "export $(grep -e '^STORYBOOK_PORT' -- ../../.env) && sb dev -p ${STORYBOOK_PORT} --no-open",
     "build-storybook": "sb build",
     "lint": "biome check --write ."
   },
