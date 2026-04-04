@@ -15,7 +15,7 @@ const menuConfig = [
 const footerMenu = [
   { href: 'https://github.com/inadeqtfuturs', label: 'github' },
   {
-    href: 'https://bsky.app/profile/speculativedev.bsky.social',
+    href: 'https://bsky.app/profile/ifqux.bsky.social',
     label: 'bluesky',
   },
 ];
