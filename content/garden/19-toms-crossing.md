@@ -75,13 +75,22 @@ i am still trying to understand why i think the above is pandering. i am still t
 
 i think i'm trying register and reckon with a disappointment in parting ways with someone i have felt an intellectual, aesthetic, and ethical kinship with for decades. i'm fine mourning this loss, but i'm also bulking at having needed to read 1200 pages to realize some things that should have probably just been obvious.
 
+7.
+
+there's an open question, variously stared at or observed, about what you get out of reading, and, as a good foucauldian and deleuzian,[^11] my central concern is what kind of tools or analytics i get from reading or engaging with a given thing, textual or otherwise. to put it bluntly, i'm more interested in finding weapons rather than hope in what i read,[^12] which is to say i'm not here to learn what i already know, i'm here to find something that helps me think the world differently. you'd be right to say that this is also danielewski's sense of what fiction can and should do, especially in *tom's crossing*, but what i've outlined above left me feeling much more in the world that exists today than the world i want to exist tomorrow,[^13] which is sharply distinct from the sense i got from *the familiar* or could glimpse in *house of leaves* or *only revolutions*. 
+
+i don't know what to make of this, and maybe it's too myopic to be useful. and i'm not trying to nor am i super interested in a prescriptive dictum about what others should/n't read or get from reading. instead, i'm just trying to outline why a 1200 page novel that i should have been in the pocket for left me so empty.
+
 [^1]: the fuck does 'good' even mean in this context and how does it produce so much bristliness for me?
 [^2]: the value of sequencing the following is probably pretty low.
 [^3]: i don't think. i know.
-[^4]: [various](https://forums.markzdanielewski.com/forum/other-stuff/out-of-the-way/155617-parable-8-z-is-for-zoo-or-transgressing-barriers-against-creative-survival) [parables](https://forums.markzdanielewski.com/forum/the-familiar/the-familiar-aa/5878-parable-n%C2%B0-9) either presented as talks or published, as well as [clip 4](https://www.markzdanielewski.com/digital-downloads/p/markzdanielewskiclip4) and [love is not a flame](https://www.markzdanielewski.com/digital-downloads/p/markzdanielewskiloveisnotaflame)
-[^5]: let's skip audio books
-[^6]: the 'how' is always more interesting than the 'what' to me, and i understand that i am in the minority on this. but, like, it seems so retrograde at the level of literary fiction (is this literary fiction? i'd associate his other work with literary fiction generally speaking) to be concerned about plot over and against *how* a narrative proceeds
-[^7]: this isn't [ducks, newburyport](https://en.wikipedia.org/wiki/Ducks,_Newburyport)
+[^4]: [various](https://forums.markzdanielewski.com/forum/other-stuff/out-of-the-way/155617-parable-8-z-is-for-zoo-or-transgressing-barriers-against-creative-survival) [parables](https://forums.markzdanielewski.com/forum/the-familiar/the-familiar-aa/5878-parable-n%C2%B0-9) either presented as talks or published, as well as [clip 4](https://www.markzdanielewski.com/digital-downloads/p/markzdanielewskiclip4) and [love is not a flame](https://www.markzdanielewski.com/digital-downloads/p/markzdanielewskiloveisnotaflame).
+[^5]: let's skip audio books.
+[^6]: the 'how' is always more interesting than the 'what' to me, and i understand that i am in the minority on this. but, like, it seems so retrograde at the level of literary fiction (is this literary fiction? i'd associate his other work with literary fiction generally speaking) to be concerned about plot over and against *how* a narrative proceeds.
+[^7]: this isn't [ducks, newburyport](https://en.wikipedia.org/wiki/Ducks,_Newburyport).
 [^8]: relation is the smallest unit of measure. without you, i am no one. read your levinas and come back to this. we owe everything to each other. read glissant. we are conconstituted by each other and can do nothing without the other. and the other is not just the human, but the animal, the plant, and the more than these things that we are coconstituted by.
-[^9]: it's not nothing. what did you want to happen with it? that's a reader issue
-[^10]: please just go read about hauntology
+[^9]: it's not nothing. what did you want to happen with it? that's a reader issue.
+[^10]: please just go read about hauntology.
+[^11]: the word again, but hopefully it's clear what i'm joking at claiming to be a good/adherant anything.
+[^12]: 'There is no need to fear or hope, but only to look for new weapons' (deleuze, 'Postscript on the Societies of Control').
+[^13]: 'I believe in the world and want to be in it. I want to be in it all the way to the end of it because I believe in another world in the world and I want to be in that' (moten, *the undercommons*).
