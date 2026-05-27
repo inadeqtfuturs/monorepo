@@ -19,3 +19,4 @@ use whenever your boomer boss shows you that article about how engineers at spot
 - [The AI productivity trap: Why your best engineers are getting slower](https://www.cio.com/article/4124515/the-ai-productivity-trap-why-your-best-engineers-are-getting-slower.html)
     - '...the single greatest frustration for developers is dealing with AI solutions that look correct but are slightly wrong.'
 - [Anthropic Study: AI Coding Assistance Reduces Developer Skill Mastery by 17%](https://www.infoq.com/news/2026/02/ai-coding-skill-formation/)
+- [ai investment is ‘harder to justify’ as productivity returns lag, uber coo says](https://gizmodo.com/ai-investment-is-harder-to-justify-as-productivity-returns-lag-uber-coo-says-2000763514)
