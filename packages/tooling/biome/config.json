@@ -11,7 +11,8 @@
       "quoteStyle": "single",
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded"
-    }
+    },
+    "jsxRuntime": "reactClassic"
   },
   "css": {
     "formatter": {

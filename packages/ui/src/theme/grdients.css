@@ -1,27 +1,32 @@
 /* Deep Ocean Waves */
 .gradient-1 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       45deg,
       var(--colors-blue-2) 0%,
       var(--colors-indigo-4) 50%,
       var(--colors-teal-5) 100%
-    ), linear-gradient(135deg, var(--colors-blue-3) 0%, transparent 50%);
+    ),
+    linear-gradient(135deg, var(--colors-blue-3) 0%, transparent 50%);
 }
 
 /* Northern Lights */
 .gradient-2 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       60deg,
       var(--colors-indigo-3) 0%,
       var(--colors-blue-4) 50%,
       var(--colors-teal-4) 100%
-    ), linear-gradient(120deg, var(--colors-indigo-5) 0%, transparent 70%),
+    ),
+    linear-gradient(120deg, var(--colors-indigo-5) 0%, transparent 70%),
     linear-gradient(180deg, var(--colors-blue-2) 0%, transparent 40%);
 }
 
 /* Midnight Frost */
 .gradient-3 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       30deg,
       var(--colors-gray-blue-2) 0%,
       var(--colors-blue-3) 50%,
@@ -36,18 +41,21 @@
 /* Digital Aurora */
 
 .gradient-4 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       90deg,
       var(--colors-indigo-2) 0%,
       var(--colors-blue-3) 50%,
       var(--colors-teal-4) 100%
-    ), linear-gradient(180deg, var(--colors-blue-4) 0%, transparent 60%),
+    ),
+    linear-gradient(180deg, var(--colors-blue-4) 0%, transparent 60%),
     linear-gradient(-45deg, var(--colors-indigo-5) 0%, transparent 80%);
 }
 
 /* Crystal Cave */
 .gradient-5 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       var(--colors-blue-1) 0%,
       var(--colors-indigo-3) 50%,
@@ -57,34 +65,40 @@
       circle at bottom left,
       var(--colors-blue-4) 0%,
       transparent 70%
-    ), linear-gradient(45deg, var(--colors-indigo-2) 0%, transparent 60%);
+    ),
+    linear-gradient(45deg, var(--colors-indigo-2) 0%, transparent 60%);
 }
 
 /* Deep Sea Currents */
 .gradient-6 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       150deg,
       var(--colors-teal-2) 0%,
       var(--colors-blue-3) 50%,
       var(--colors-indigo-4) 100%
-    ), linear-gradient(-60deg, var(--colors-blue-2) 0%, transparent 70%),
+    ),
+    linear-gradient(-60deg, var(--colors-blue-2) 0%, transparent 70%),
     radial-gradient(circle at center, var(--colors-teal-3) 0%, transparent 50%);
 }
 
 /* Cyberpunk Night */
 .gradient-7 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       120deg,
       var(--colors-indigo-1) 0%,
       var(--colors-blue-2) 50%,
       var(--colors-teal-2) 100%
-    ), linear-gradient(-30deg, var(--colors-indigo-4) 0%, transparent 80%),
+    ),
+    linear-gradient(-30deg, var(--colors-indigo-4) 0%, transparent 80%),
     linear-gradient(60deg, var(--colors-blue-3) 0%, transparent 60%);
 }
 
 /* Frozen Lake */
 .gradient-8 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       75deg,
       var(--colors-gray-blue-1) 0%,
       var(--colors-blue-2) 50%,
@@ -94,17 +108,20 @@
       circle at top left,
       var(--colors-blue-4) 0%,
       transparent 65%
-    ), linear-gradient(-15deg, var(--colors-teal-2) 0%, transparent 70%);
+    ),
+    linear-gradient(-15deg, var(--colors-teal-2) 0%, transparent 70%);
 }
 
 /* Tech Abyss */
 .gradient-9 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       var(--colors-blue-0) 0%,
       var(--colors-indigo-2) 50%,
       var(--colors-blue-3) 100%
-    ), linear-gradient(45deg, var(--colors-teal-2) 0%, transparent 60%),
+    ),
+    linear-gradient(45deg, var(--colors-teal-2) 0%, transparent 60%),
     radial-gradient(
       circle at bottom right,
       var(--colors-indigo-3) 0%,
@@ -115,12 +132,14 @@
 /* Holographic Dreams */
 
 .gradient-10 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       105deg,
       var(--colors-indigo-2) 0%,
       var(--colors-blue-3) 40%,
       var(--colors-teal-4) 100%
-    ), linear-gradient(-75deg, var(--colors-blue-3) 0%, transparent 65%),
+    ),
+    linear-gradient(-75deg, var(--colors-blue-3) 0%, transparent 65%),
     radial-gradient(
       circle at center,
       var(--colors-indigo-4) 0%,

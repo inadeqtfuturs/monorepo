@@ -2,6 +2,6 @@
   "root": false,
   "extends": ["../../packages/tooling/biome/config.json"],
   "files": {
-    "incldes": ["**"]
+    "includes": ["**"]
   }
 }

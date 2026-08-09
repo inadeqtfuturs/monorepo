@@ -2,9 +2,11 @@
   "name": "storybook",
   "version": "1.0.0",
   "private": true,
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
-    "dev": "export $(grep -e '^STORYBOOK_PORT' -- ../../.env) && sb dev -p ${STORYBOOK_PORT} --no-open",
+    "dev": "export $(grep -e '^STORYBOOK_PORT' -- ../../.env) && storybook dev -p ${STORYBOOK_PORT} --no-open",
     "build-storybook": "sb build",
     "lint": "biome check --write ."
   },
