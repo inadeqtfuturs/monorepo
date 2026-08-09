@@ -1,6 +1,6 @@
-import { vi, describe, it, expect, beforeEach } from 'vitest';
 import fs from 'node:fs/promises';
 import glob from 'fast-glob';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import createUtils from '../src/index';
 
 vi.mock('node:fs/promises');
@@ -28,10 +28,10 @@ describe('Content Utils', () => {
 
     vi.spyOn(process, 'cwd').mockReturnValue(mockCwd);
 
-    (glob as unknown as jest.Mock).mockResolvedValue(mockFiles);
+    vi.mocked(glob).mockResolvedValue(mockFiles);
 
-    (fs.readFile as unknown as jest.Mock).mockImplementation((path) =>
-      Promise.resolve(mockFileContents[path]),
+    vi.spyOn(fs, 'readFile').mockImplementation(
+      async (path) => mockFileContents[path as string],
     );
   });
 
@@ -133,9 +133,9 @@ describe('Content Utils', () => {
 
   describe('error handling', () => {
     it('should handle file read errors gracefully', async () => {
-      (fs.readFile as unknown as jest.Mock).mockRejectedValueOnce(
-        new Error('File read error'),
-      );
+      vi.spyOn(fs, 'readFile').mockImplementationOnce(() => {
+        throw new Error('File read error');
+      });
 
       const config = {
         contentDirectory: '/content',
@@ -146,9 +146,7 @@ describe('Content Utils', () => {
     });
 
     it('should handle glob errors gracefully', async () => {
-      (glob as unknown as jest.Mock).mockRejectedValueOnce(
-        new Error('Glob error'),
-      );
+      vi.mocked(glob).mockRejectedValueOnce(new Error('Glob error'));
 
       const config = {
         contentDirectory: '/content',

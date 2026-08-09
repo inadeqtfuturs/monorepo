@@ -1,16 +1,10 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
-  "organizeImports": {
-    "enabled": false
-  },
+  "$schema": "https://biomejs.dev/schemas/2.5.7/schema.json",
   "formatter": {
     "indentStyle": "space"
   },
   "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
+    "enabled": true
   },
   "javascript": {
     "formatter": {
