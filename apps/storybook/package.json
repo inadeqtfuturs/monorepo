@@ -17,7 +17,7 @@
     "@storybook/addon-links": "^8.6.12",
     "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/blocks": "^8.6.12",
-    "@storybook/cli": "^8.6.12",
+    "@storybook/cli": "^9.1.15",
     "@storybook/nextjs": "^8.6.12",
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
