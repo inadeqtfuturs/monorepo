@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import React from 'react';
 import type { ReactNode } from 'react';
+import React from 'react';
 
 import Layout from '@/components/Layout';
 import ThemeScript from '@/lib/getTheme';
