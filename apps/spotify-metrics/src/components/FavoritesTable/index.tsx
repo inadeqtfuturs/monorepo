@@ -10,21 +10,23 @@ import {
 import {
   type ColumnDef,
   columnFilteringFeature,
+  columnVisibilityFeature,
   createColumnHelper,
   createFilteredRowModel,
   createPaginatedRowModel,
   createSortedRowModel,
+  filterFn_includesString,
   flexRender,
+  globalFilteringFeature,
   type PaginationState,
+  type ReactTable,
   rowPaginationFeature,
   rowSortingFeature,
   type SortDirection,
   sortFn_alphanumeric,
   sortFn_datetime,
   tableFeatures,
-  columnVisibilityFeature,
   useTable,
-  type ReactTable,
 } from '@tanstack/react-table';
 import { useContext, useMemo, useState } from 'react';
 import { DashboardContext, type Track } from '@/context/DashboardContext';
@@ -37,11 +39,15 @@ const features = tableFeatures({
   filteredRowModel: createFilteredRowModel(),
   rowSortingFeature,
   rowPaginationFeature,
+  globalFilteringFeature,
   columnFilteringFeature,
   columnVisibilityFeature,
   sortFns: {
     alphanumeric: sortFn_alphanumeric,
     datetime: sortFn_datetime,
+  },
+  filterFns: {
+    includesString: filterFn_includesString,
   },
 });
 
@@ -95,7 +101,11 @@ function ToggleIndicator({ direction }: { direction: false | SortDirection }) {
   if (!direction) {
     return <></>;
   }
-  return direction === 'asc' ? <CaretUpIcon /> : <CaretDownIcon />;
+  return direction === 'asc' ? (
+    <CaretUpIcon style={{ minWidth: 'fit-content' }} />
+  ) : (
+    <CaretDownIcon style={{ minWidth: 'fit-content' }} />
+  );
 }
 
 function Header({
@@ -169,7 +179,7 @@ function Toolbar({
           name='search'
           id='search'
           className={styles.search}
-          value={''}
+          value={table.state.globalFilter || ''}
           onChange={({ target: { value } }) =>
             table.setGlobalFilter(String(value))
           }
@@ -288,6 +298,7 @@ function FavoritesTable({ asideState }) {
     pageIndex: 0,
     pageSize: 50,
   });
+  const [globalFilter, setGlobalFilter] = useState<string>('');
   const table = useTable({
     features,
     data: tracks,
@@ -302,8 +313,10 @@ function FavoritesTable({ asideState }) {
     },
     state: {
       pagination,
+      globalFilter,
     },
     onPaginationChange: setPagination,
+    onGlobalFilterChange: setGlobalFilter,
   });
 
   return (
