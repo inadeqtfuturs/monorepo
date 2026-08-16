@@ -1,7 +1,7 @@
-import React from 'react';
-import type { Metadata } from 'next';
-import PostExcerpt from '@/components/RecentWriting/PostExcerpt';
 import { getBlogPages } from '@content';
+import type { Metadata } from 'next';
+import React from 'react';
+import PostExcerpt from '@/components/RecentWriting/PostExcerpt';
 import defaultMetadata from '@/lib/metadata';
 
 import styles from './index.module.css';

@@ -24,7 +24,12 @@ function LoginPage() {
           use the login button to authorize spotify's api. we request access to
           your top artists, top tracks, and recent tracks. you can read more
           about spotify's api{' '}
-          <a href='https://developer.spotify.com/documentation/web-api'>here</a>
+          <a
+            href='https://developer.spotify.com/documentation/web-api'
+            aria-label='spotify docs'
+          >
+            here
+          </a>
           .
         </small>
       </section>

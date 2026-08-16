@@ -1,7 +1,7 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import glob from 'fast-glob';
 import matter from 'gray-matter';
-import path from 'node:path';
-import fs from 'node:fs/promises';
 
 import type {
   BasePage,

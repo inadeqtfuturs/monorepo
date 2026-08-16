@@ -5,7 +5,7 @@ export const config = {
   matcher: ['/((?!spotify/callback|spotify/authenticate|_next).*)'],
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const accessToken = request.cookies.get(accessTokenKey)?.value;
 
   if (accessToken && request.nextUrl.pathname.startsWith('/login')) {

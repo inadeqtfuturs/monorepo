@@ -5,7 +5,9 @@ type ToastProviderProps = {
   providerId?: string;
   providerStyle?: CSSProperties;
   providerClassName?: string;
-  duration?: number;
+  providerProps?: {
+    duration?: number;
+  };
 };
 
 const ToastStyle: CSSProperties = {

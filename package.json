@@ -14,13 +14,13 @@
     "gen:changelog": "turbo gen:changelog"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "2.5.7",
     "@if/tooling": "*",
-    "turbo": "^2.5.4"
+    "turbo": "2.10.9"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
-  "packageManager": "npm@11.3.0",
+  "packageManager": "npm@11.6.1",
   "workspaces": ["apps/*", "packages/*", "scripts"]
 }

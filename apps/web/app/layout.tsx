@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import React from 'react';
 import type { ReactNode } from 'react';
+import React from 'react';
 
 import Layout from '@/components/Layout';
 import ThemeScript from '@/lib/getTheme';
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning data-scroll-behavior='smooth'>
       <head>
         <ThemeScript />
       </head>

@@ -84,7 +84,7 @@ export const useToasts = (options?: object, id = 'poptoast') => {
       );
     });
     return () =>
-      // biome-ignore lint/complexity/noForEach: return a function
+      // biome-ignore lint/suspicious/useIterableCallbackReturn: use iterable
       timeouts.forEach((timeout) => timeout && clearTimeout(timeout));
   }, [state.toasts]);
 

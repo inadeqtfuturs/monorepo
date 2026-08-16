@@ -1,19 +1,15 @@
-import type { StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react';
+
 import ToastProvider from './index';
 
 const meta = {
   title: 'poptoast/provider',
   component: ToastProvider,
   tags: ['autodocs'],
-  args: { onClick: fn() },
-};
+} satisfies Meta<typeof ToastProvider>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
-export const Defaults: Story = {
-  args: {
-    children: 'test',
-  },
-};
+export const Defaults: Story = {};

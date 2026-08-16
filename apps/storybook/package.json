@@ -2,26 +2,22 @@
   "name": "storybook",
   "version": "1.0.0",
   "private": true,
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
-    "#dev": "export $(grep -e '^STORYBOOK_PORT' -- ../../.env) && sb dev -p ${STORYBOOK_PORT} --no-open",
+    "dev": "export $(grep -e '^STORYBOOK_PORT' -- ../../.env) && storybook dev -p ${STORYBOOK_PORT} --no-open",
     "build-storybook": "sb build",
     "lint": "biome check --write ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@chromatic-com/storybook": "^3.2.6",
+    "@biomejs/biome": "2.5.7",
+    "@chromatic-com/storybook": "5.3.0",
     "@if/tooling": "*",
-    "@storybook/addon-essentials": "^8.6.12",
-    "@storybook/addon-interactions": "^8.6.12",
-    "@storybook/addon-links": "^8.6.12",
-    "@storybook/addon-styling-webpack": "^1.0.1",
-    "@storybook/blocks": "^8.6.12",
-    "@storybook/cli": "^8.6.12",
-    "@storybook/nextjs": "^8.6.12",
-    "@storybook/react": "^8.6.12",
-    "@storybook/test": "^8.6.12",
-    "@types/node": "^22.15.3",
-    "typescript": "^5.8.3"
+    "@storybook/addon-styling-webpack": "3.0.2",
+    "@storybook/cli": "10.5.7",
+    "@storybook/nextjs": "10.5.7",
+    "@types/node": "26.2.0",
+    "typescript": "7.0.2"
   }
 }

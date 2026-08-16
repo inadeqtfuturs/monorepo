@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
-import styles from './index.module.css';
-import FavoritesTable from '@/components/FavoritesTable';
 import classname from '@if/ui/utils/classname';
+import React, { useState } from 'react';
+import FavoritesTable from '@/components/FavoritesTable';
 import { logout } from '@/lib/spotify';
+import styles from './index.module.css';
 
 function DashboardLayout() {
   const [open, setOpen] = useState(false);

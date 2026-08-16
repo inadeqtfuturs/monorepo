@@ -1,8 +1,9 @@
 {
   "extends": "@if/tooling/tsconfig/react-library.json",
   "compilerOptions": {
-    "moduleResolution": "Node"
+    "module": "esnext",
+    "moduleResolution": "bundler"
   },
-  "include": ["src"],
+  "include": ["src", "**/*.test.ts"],
   "exclude": ["node_modules", "dist"]
 }

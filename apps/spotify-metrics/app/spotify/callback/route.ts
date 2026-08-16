@@ -1,5 +1,5 @@
-import { getAndSetAccessToken } from '@/lib/spotify';
 import { cookies } from 'next/headers';
+import { getAndSetAccessToken } from '@/lib/spotify';
 
 export async function GET(request: Request) {
   const params = new URLSearchParams(request.url.split('?')[1]);

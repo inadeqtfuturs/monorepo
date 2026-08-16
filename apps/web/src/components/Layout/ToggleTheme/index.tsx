@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useContext } from 'react';
-
-import styles from './index.module.css';
 import { ThemeContext } from '../ThemeContext';
+import styles from './index.module.css';
 
 function ToggleTheme() {
   const { isClient, theme, toggleTheme } = useContext(ThemeContext);

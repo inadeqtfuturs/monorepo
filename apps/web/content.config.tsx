@@ -51,4 +51,4 @@ export type ChangelogEntryType = Awaited<
 >[number];
 export type Page = Awaited<ReturnType<typeof getBlogPages>>[number];
 
-export { getBlogPages, getPage, getPages, getWork, getChangelogEntries };
+export { getBlogPages, getChangelogEntries, getPage, getPages, getWork };

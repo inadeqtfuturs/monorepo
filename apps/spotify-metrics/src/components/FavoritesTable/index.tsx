@@ -1,31 +1,59 @@
-import { useContext, useMemo, useState } from 'react';
-import { DashboardContext, type Track } from '@/context/DashboardContext';
 import classname from '@if/ui/utils/classname';
 import {
-  CaretUpIcon,
   CaretDownIcon,
-  TableIcon,
+  CaretUpIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   HamburgerMenuIcon,
+  TableIcon,
 } from '@radix-ui/react-icons';
 import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getSortedRowModel,
-  useReactTable,
-  type SortDirection,
   type ColumnDef,
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  createColumnHelper,
+  createFilteredRowModel,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  filterFn_includesString,
+  flexRender,
+  globalFilteringFeature,
   type PaginationState,
-  type Table,
-  getPaginationRowModel,
+  type ReactTable,
+  rowPaginationFeature,
+  rowSortingFeature,
+  type SortDirection,
+  sortFn_alphanumeric,
+  sortFn_datetime,
+  tableFeatures,
+  useTable,
 } from '@tanstack/react-table';
+import { useContext, useMemo, useState } from 'react';
+import { DashboardContext, type Track } from '@/context/DashboardContext';
 
 import styles from './index.module.css';
 
-const columnHelper = createColumnHelper<Track>();
+const features = tableFeatures({
+  sortedRowModel: createSortedRowModel(),
+  paginatedRowModel: createPaginatedRowModel(),
+  filteredRowModel: createFilteredRowModel(),
+  rowSortingFeature,
+  rowPaginationFeature,
+  globalFilteringFeature,
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  sortFns: {
+    alphanumeric: sortFn_alphanumeric,
+    datetime: sortFn_datetime,
+  },
+  filterFns: {
+    includesString: filterFn_includesString,
+  },
+});
+
+type TableFeatures = typeof features;
+
+const columnHelper = createColumnHelper<TableFeatures, Track>();
 
 const formatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -36,12 +64,11 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 const columns = [
   columnHelper.accessor('name', {
     cell: (info) => info.getValue(),
-    sortingFn: 'alphanumeric',
   }),
   {
     id: 'artist',
     accessorFn: (row) => row.artist,
-    cell: (info) => info.getValue().join(', '),
+    cell: (info) => (info.getValue() as string[]).join(', '),
     filterFn: 'includesString',
     sortingFn: 'auto',
   },
@@ -53,7 +80,6 @@ const columns = [
   },
   columnHelper.accessor('duration', {
     cell: (info) => info.getValue(),
-    enableGlobalFilter: false,
   }),
   {
     id: 'release date',
@@ -64,23 +90,29 @@ const columns = [
   },
   columnHelper.accessor('added', {
     cell: (info) => formatter.format(info.getValue()),
-    sortingFn: 'datetime',
-    enableGlobalFilter: false,
+    sortFn: 'datetime',
   }),
   columnHelper.accessor('popularity', {
     cell: (info) => info.getValue(),
-    enableGlobalFilter: false,
   }),
-] as ColumnDef<Track>[];
+] as ColumnDef<TableFeatures, Track>[];
 
 function ToggleIndicator({ direction }: { direction: false | SortDirection }) {
   if (!direction) {
-    return <></>;
+    return null;
   }
-  return direction === 'asc' ? <CaretUpIcon /> : <CaretDownIcon />;
+  return direction === 'asc' ? (
+    <CaretUpIcon style={{ minWidth: 'fit-content' }} />
+  ) : (
+    <CaretDownIcon style={{ minWidth: 'fit-content' }} />
+  );
 }
 
-function Header({ asideState }) {
+function Header({
+  asideState,
+}: {
+  asideState: { setOpen: (_: boolean) => void; open: boolean };
+}) {
   return (
     <header className={styles.header}>
       <div className={styles.titleWrapper}>
@@ -100,7 +132,7 @@ function Header({ asideState }) {
   );
 }
 
-function ColumnToggle({ table }: { table: Table<Track> }) {
+function ColumnToggle({ table }: { table: ReactTable<TableFeatures, Track> }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -134,7 +166,12 @@ function ColumnToggle({ table }: { table: Table<Track> }) {
   );
 }
 
-function Toolbar({ table, fetchFavorites }: { table: Table<Track> }) {
+function Toolbar({
+  table,
+  fetchFavorites,
+}: {
+  table: ReactTable<TableFeatures, Track>;
+}) {
   return (
     <nav className={styles.toolbar}>
       <div className={styles.inputWrapper}>
@@ -142,7 +179,7 @@ function Toolbar({ table, fetchFavorites }: { table: Table<Track> }) {
           name='search'
           id='search'
           className={styles.search}
-          value={table.getState().globalFilter ?? ''}
+          value={table.state.globalFilter || ''}
           onChange={({ target: { value } }) =>
             table.setGlobalFilter(String(value))
           }
@@ -162,25 +199,26 @@ function Toolbar({ table, fetchFavorites }: { table: Table<Track> }) {
   );
 }
 
-function Pagination({ table }: { table: Table<Track> }) {
+function Pagination({ table }: { table: ReactTable<TableFeatures, Track> }) {
   const pageCount = table.getPageCount();
   const Options = useMemo(
     () =>
       Array.from({ length: pageCount }, (_, x: number) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+        // biome-ignore lint/suspicious/noArrayIndexKey: numbers
         <option key={x} value={x}>
           {x + 1}
         </option>
       )),
     [pageCount],
   );
+
   return (
     <div className={styles.paginationWrapper}>
       <div className={styles.perPageWrapper}>
         <select
           name='pageSize'
           id='pageSize'
-          value={table.getState().pagination.pageSize}
+          value={table.state.pagination.pageSize}
           className={styles.perPageSelect}
           onChange={({ target: { value } }) => {
             table.setPageSize(Number(value));
@@ -206,7 +244,7 @@ function Pagination({ table }: { table: Table<Track> }) {
         <select
           name='page'
           id='page'
-          value={table.getState().pagination.pageIndex}
+          value={table.state.pagination.pageIndex}
           className={styles.perPageSelect}
           onChange={({ target: { value } }) => {
             table.setPageIndex(Number(value));
@@ -228,7 +266,7 @@ function Pagination({ table }: { table: Table<Track> }) {
   );
 }
 
-function Loading({ loadingState }) {
+function Loading({ loadingState }: { loadingState?: string }) {
   return (
     <div className={styles.loadingWrapper}>
       <h1>loading</h1>
@@ -256,21 +294,15 @@ function LoadTracksModal({ fetchFavorites }) {
 function FavoritesTable({ asideState }) {
   const { loading, loadingState, tracks, fetchFavorites } =
     useContext(DashboardContext);
-  const [globalFilter, setGlobalFilter] = useState<string>();
-  const [columnVisibility, setColumnVisibility] = useState({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 50,
   });
-  const table = useReactTable({
+  const [globalFilter, setGlobalFilter] = useState<string>('');
+  const table = useTable({
+    features,
     data: tracks,
     columns,
-    getSortedRowModel: getSortedRowModel(),
-    getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    globalFilterFn: 'includesString',
-    getColumnCanGlobalFilter: () => true,
     initialState: {
       sorting: [
         {
@@ -280,13 +312,11 @@ function FavoritesTable({ asideState }) {
       ],
     },
     state: {
-      globalFilter,
-      columnVisibility,
       pagination,
+      globalFilter,
     },
-    onGlobalFilterChange: setGlobalFilter,
-    onColumnVisibilityChange: setColumnVisibility,
     onPaginationChange: setPagination,
+    onGlobalFilterChange: setGlobalFilter,
   });
 
   return (
@@ -323,7 +353,7 @@ function FavoritesTable({ asideState }) {
             </div>
             {table.getRowModel().rows.map((row) => (
               <div key={row.id} className={styles.row}>
-                {row.getVisibleCells().map((cell) => (
+                {row.getAllCells().map((cell) => (
                   <div key={cell.id} className={styles.cell}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </div>

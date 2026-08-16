@@ -1,9 +1,8 @@
-import React, { type PropsWithChildren } from 'react';
 import Link from 'next/link';
-import ToggleTheme from './ToggleTheme';
-
+import type { PropsWithChildren } from 'react';
 import styles from './index.module.css';
 import ThemeProvider from './ThemeContext';
+import ToggleTheme from './ToggleTheme';
 
 const menuConfig = [
   { label: 'writing', href: '/garden' },

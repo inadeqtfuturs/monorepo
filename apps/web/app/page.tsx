@@ -1,11 +1,10 @@
+import { getBlogPages, getPage, type Page } from '@content';
+import { evaluate } from '@mdx-js/mdx';
 import React from 'react';
 import * as runtime from 'react/jsx-runtime';
-import { evaluate } from '@mdx-js/mdx';
-
-import { getBlogPages, getPage, type Page } from '@content';
-import getGithubRepoInfo from '@/lib/getGithubRepoInfo';
 import RecentProjects from '@/components/RecentProjects';
 import RecentWriting from '@/components/RecentWriting';
+import getGithubRepoInfo from '@/lib/getGithubRepoInfo';
 
 async function Home() {
   const pageData = await getPage({ slug: 'index' });

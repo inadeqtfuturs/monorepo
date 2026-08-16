@@ -26,7 +26,11 @@
   &:hover,
   &:focus {
     cursor: pointer;
-    background: color-mix(in srgb, var(--colors-teal-10), var(--background) 25%);
+    background: color-mix(
+      in srgb,
+      var(--colors-teal-10),
+      var(--background) 25%
+    );
   }
 }
 
