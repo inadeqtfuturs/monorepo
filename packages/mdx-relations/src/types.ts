@@ -63,7 +63,7 @@ export type PageWithMetadata<
 export type Page<
   F,
   M extends MetadataGenerators<F> = MetadataGenerators<F>,
-  R extends RelationGenerators<F, M> = RelationGenerators<F, M>,
+  _R extends RelationGenerators<F, M> = RelationGenerators<F, M>,
 > = PageWithMetadata<F, M>;
 
 export type Filter<

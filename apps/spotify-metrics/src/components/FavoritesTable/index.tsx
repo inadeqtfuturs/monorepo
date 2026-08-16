@@ -99,7 +99,7 @@ const columns = [
 
 function ToggleIndicator({ direction }: { direction: false | SortDirection }) {
   if (!direction) {
-    return <></>;
+    return null;
   }
   return direction === 'asc' ? (
     <CaretUpIcon style={{ minWidth: 'fit-content' }} />
@@ -204,7 +204,7 @@ function Pagination({ table }: { table: ReactTable<TableFeatures, Track> }) {
   const Options = useMemo(
     () =>
       Array.from({ length: pageCount }, (_, x: number) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+        // biome-ignore lint/suspicious/noArrayIndexKey: numbers
         <option key={x} value={x}>
           {x + 1}
         </option>

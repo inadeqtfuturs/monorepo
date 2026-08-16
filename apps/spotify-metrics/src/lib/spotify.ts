@@ -1,18 +1,18 @@
 'use server';
 
+import crypto from 'node:crypto';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import crypto from 'node:crypto';
 
 import {
-  tokenEndpoint,
-  key,
   accessTokenKey,
+  clientId,
+  key,
+  redirectUri,
   refreshTokenKey,
   scope,
-  redirectUri,
-  clientId,
   token,
+  tokenEndpoint,
 } from './constants';
 
 const generateRandomString = (length: number) => {

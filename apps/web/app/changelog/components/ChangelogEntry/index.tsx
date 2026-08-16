@@ -1,14 +1,17 @@
+import type { ChangelogEntryType } from '@content';
+import { evaluate } from '@mdx-js/mdx';
 import React from 'react';
 import * as runtime from 'react/jsx-runtime';
-import { evaluate } from '@mdx-js/mdx';
 import remarkGfm from 'remark-gfm';
-import type { ChangelogEntryType } from '@content';
 import styles from './index.module.css';
 
 async function ChangelogEntry({
   entry,
   open = true,
-}: { entry: ChangelogEntryType; open: boolean }) {
+}: {
+  entry: ChangelogEntryType;
+  open: boolean;
+}) {
   const { default: Content } = await evaluate(entry.content, {
     ...runtime,
     remarkPlugins: [remarkGfm],

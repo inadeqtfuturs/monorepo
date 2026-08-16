@@ -1,16 +1,18 @@
+import { getBlogPages } from '@content';
+import { evaluate } from '@mdx-js/mdx';
 import React from 'react';
 import * as runtime from 'react/jsx-runtime';
-import { evaluate } from '@mdx-js/mdx';
 import rehypePrettyCode from 'rehype-pretty-code';
-import { getBlogPages } from '@content';
-import PostHeader from './components/PostHeader';
 import remarkGfm from 'remark-gfm';
 import defaultMetadata from '@/lib/metadata';
+import PostHeader from './components/PostHeader';
 
 export const dynamicParams = false;
 export async function generateMetadata({
   params,
-}: { params: Promise<{ slug: string }> }) {
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const [pageData] = await getBlogPages({
     filter: ({ params: { slug: pageSlug } }) => pageSlug[0] === slug,

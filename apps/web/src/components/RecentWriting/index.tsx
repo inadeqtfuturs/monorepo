@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
 import type { Page } from '@content';
+import Link from 'next/link';
+import React from 'react';
 
 import styles from './index.module.css';
 import PostExcerpt from './PostExcerpt';

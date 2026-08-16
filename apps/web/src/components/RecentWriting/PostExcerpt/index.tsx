@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
 import type { Page } from '@content';
+import Link from 'next/link';
+import React from 'react';
 
 import styles from './index.module.css';
 
@@ -10,7 +10,9 @@ function PostExcerpt({
     metadata: { date },
     params: { slug },
   },
-}: { post: Page }) {
+}: {
+  post: Page;
+}) {
   return (
     <div key={title} className={styles.postExcerptWrapper}>
       <span className={styles.date}>{date}</span>

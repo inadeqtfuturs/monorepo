@@ -1,9 +1,9 @@
+import { getPage } from '@content';
+import { evaluate } from '@mdx-js/mdx';
+import type { Metadata } from 'next';
 import React from 'react';
 import * as runtime from 'react/jsx-runtime';
-import type { Metadata } from 'next';
-import { evaluate } from '@mdx-js/mdx';
 import remarkGfm from 'remark-gfm';
-import { getPage } from '@content';
 import defaultMetadata from '@/lib/metadata';
 
 export const metadata: Metadata = defaultMetadata({ title: 'about' });

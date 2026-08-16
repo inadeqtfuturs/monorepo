@@ -1,12 +1,12 @@
 'use client';
 
-import { createContextReducer } from '@/lib/createContextReducer';
 import React, {
   createContext,
+  type PropsWithChildren,
   useEffect,
   useReducer,
-  type PropsWithChildren,
 } from 'react';
+import { createContextReducer } from '@/lib/createContextReducer';
 
 export type Track = {
   added: Date;
@@ -77,7 +77,10 @@ const getDb = async (req?: IDBOpenDBRequest) => {
 const getTransaction = ({
   db,
   mode,
-}: { db: IDBDatabase; mode: IDBTransactionMode }) => {
+}: {
+  db: IDBDatabase;
+  mode: IDBTransactionMode;
+}) => {
   const trx = db.transaction(DB_STORE_NAME, mode);
 
   trx.oncomplete = () => console.log('@--> trx complete');
@@ -125,7 +128,10 @@ const [reducer, _context] = createContextReducer(
 const getAllData = async ({
   db,
   req,
-}: { db: IDBDatabase; req?: IDBRequest }) => {
+}: {
+  db: IDBDatabase;
+  req?: IDBRequest;
+}) => {
   const trx = getTransaction({ db, mode: 'readonly' });
   const result = req || trx.getAll();
   if (result.readyState !== 'done') {

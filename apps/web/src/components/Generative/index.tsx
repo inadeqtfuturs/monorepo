@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import canvasSketch from 'canvas-sketch';
 import Random from 'canvas-sketch-util/random';
-
-import styles from './index.module.css';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ThemeContext } from '../Layout/ThemeContext';
+import styles from './index.module.css';
 
 Random.setSeed(Random.getRandomSeed());
 

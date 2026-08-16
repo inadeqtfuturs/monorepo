@@ -2,6 +2,6 @@
   "root": false,
   "extends": ["../../packages/tooling/biome/config.json"],
   "files": {
-    "includes": ["**", "!**/.next/**", "!**/.turbo/**"]
+    "includes": ["**", "!**/.next", "!**/.turbo"]
   }
 }

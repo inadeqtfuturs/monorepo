@@ -51,7 +51,11 @@
   &:hover,
   &:focus {
     cursor: pointer;
-    background: color-mix(in srgb, var(--colors-teal-10), var(--background) 25%);
+    background: color-mix(
+      in srgb,
+      var(--colors-teal-10),
+      var(--background) 25%
+    );
   }
 }
 
@@ -194,7 +198,9 @@
   right: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   pointer-events: none;
 
   display: flex;

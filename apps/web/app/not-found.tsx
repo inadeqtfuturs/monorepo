@@ -1,6 +1,6 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Generative from '@/components/Generative';
-import type { Metadata } from 'next';
 import defaultMetadata from '@/lib/metadata';
 
 export const metadata: Metadata = defaultMetadata({

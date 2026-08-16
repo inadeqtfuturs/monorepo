@@ -31,7 +31,7 @@ describe('Content Utils', () => {
     vi.mocked(glob).mockResolvedValue(mockFiles);
 
     vi.spyOn(fs, 'readFile').mockImplementation(
-      async (path) => mockFileContents[path as string],
+      async (path) => mockFileContents[path as keyof typeof mockFileContents],
     );
   });
 
@@ -45,9 +45,9 @@ describe('Content Utils', () => {
       const pages = await utils.getPages();
 
       expect(pages).toHaveLength(3);
-      expect(pages[0].params.slug).toEqual(['post-1']);
-      expect(pages[1].params.slug).toEqual(['post-2']);
-      expect(pages[2].params.slug).toEqual(['nested', 'post-3']);
+      expect(pages[0]?.params.slug).toEqual(['post-1']);
+      expect(pages[1]?.params.slug).toEqual(['post-2']);
+      expect(pages[2]?.params.slug).toEqual(['nested', 'post-3']);
     });
 
     it('should apply metadata generators', async () => {
@@ -61,7 +61,7 @@ describe('Content Utils', () => {
       const utils = createUtils(config);
       const pages = await utils.getPages();
 
-      expect(pages[0].metadata.title).toEqual('Post 1');
+      expect(pages[0]?.metadata.title).toEqual('Post 1');
     });
 
     it('should apply relation generators', async () => {
@@ -122,7 +122,7 @@ describe('Content Utils', () => {
       };
 
       const utils = createUtils(config);
-      const paths = await utils.getPaths('/custom');
+      const _paths = await utils.getPaths('/custom');
 
       expect(glob).toHaveBeenCalledWith(
         expect.stringContaining('/custom'),

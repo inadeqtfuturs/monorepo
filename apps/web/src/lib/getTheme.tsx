@@ -18,17 +18,17 @@ function code() {
     window.__onThemeChange(newTheme);
   }
 
-  let preferredTheme: Theme;
+  let preferredTheme: Theme | undefined;
 
   try {
     preferredTheme = localStorage.getItem('theme') as Theme;
-  } catch (err) {}
+  } catch (_err) {}
 
   window.__setPreferredTheme = (newTheme: Theme) => {
     setTheme(newTheme);
     try {
       localStorage.setItem('theme', newTheme);
-    } catch (err) {}
+    } catch (_err) {}
   };
 
   const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -41,6 +41,6 @@ function code() {
 }
 
 export default function ThemeScript() {
-  // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+  // biome-ignore lint/security/noDangerouslySetInnerHtml: needed
   return <script dangerouslySetInnerHTML={{ __html: `(${code})();` }} />;
 }

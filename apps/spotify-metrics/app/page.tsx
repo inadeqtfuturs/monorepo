@@ -1,14 +1,13 @@
-import React from 'react';
-import DashboardLayout from '@/layouts/Dashboard';
-import DashboardProvider from '@/context/DashboardContext';
 import { cookies } from 'next/headers';
-import { accessTokenKey, refreshTokenKey } from '@/lib/constants';
+import React from 'react';
+import DashboardProvider from '@/context/DashboardContext';
+import DashboardLayout from '@/layouts/Dashboard';
+import { accessTokenKey } from '@/lib/constants';
 
 // middleware handles login page redirect
 async function Page() {
   const appCookies = await cookies();
   const accessToken = appCookies.get(accessTokenKey);
-  // const refreshToken = appCookies.get(refreshTokenKey);
   return (
     <DashboardProvider cookies={{ accessToken }}>
       <DashboardLayout />
